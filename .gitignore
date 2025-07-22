@@ -1,0 +1,14 @@
+# Maven
+/target
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+*.iml
+.idea/
+*.log
+
+# OS files
+.DS_Store
+
+# Credentials
+env.sh
