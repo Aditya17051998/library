@@ -1,6 +1,6 @@
 package org.paysecure.library;
 
-public class LibraryeService {
+public class LibraryService {
 
     public String getGreeting(String lang) {
         return switch (lang.toLowerCase()) {
