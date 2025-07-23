@@ -25,6 +25,34 @@ public class CustomException extends RuntimeException {
     public String getDevMessage() {
         return devMessage;
     }
-}
 
-// throw new CustomException(HttpStatus.NOT_FOUND, "Merchant not found", "No record exists for given ID", "MerchantService.lookup()");
+    // 🔹 Static methods with "throw" prefix
+
+    public static CustomException throwBadRequestException(String message, String description, String devMessage) {
+        return new CustomException(HttpStatus.BAD_REQUEST, message, description, devMessage);
+    }
+
+    public static CustomException throwUnauthorizedException(String message, String description, String devMessage) {
+        return new CustomException(HttpStatus.UNAUTHORIZED, message, description, devMessage);
+    }
+
+    public static CustomException throwForbiddenException(String message, String description, String devMessage) {
+        return new CustomException(HttpStatus.FORBIDDEN, message, description, devMessage);
+    }
+
+    public static CustomException throwNotFoundException(String message, String description, String devMessage) {
+        return new CustomException(HttpStatus.NOT_FOUND, message, description, devMessage);
+    }
+
+    public static CustomException throwConflictException(String message, String description, String devMessage) {
+        return new CustomException(HttpStatus.CONFLICT, message, description, devMessage);
+    }
+
+    public static CustomException throwInternalServerErrorException(String message, String description, String devMessage) {
+        return new CustomException(HttpStatus.INTERNAL_SERVER_ERROR, message, description, devMessage);
+    }
+
+    public static CustomException throwCustomException(HttpStatus status, String message, String description, String devMessage) {
+        return new CustomException(status, message, description, devMessage);
+    }
+}
