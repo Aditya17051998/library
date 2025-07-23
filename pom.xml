@@ -5,7 +5,16 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.paysecure</groupId>
+  <!-- it for maven package -->
+
+  <!-- <groupId>com.paysecure</groupId>
+    <artifactId>library</artifactId>
+    <version>1.0.0</version>
+  <packaging>jar</packaging> -->
+
+  <!-- it for jitpack -->
+
+  <groupId>com.github.Aditya17051998</groupId>
     <artifactId>library</artifactId>
     <version>1.0.0</version>
   <packaging>jar</packaging>
@@ -19,13 +28,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <distributionManagement>
+  <!-- When you want to create maven package o github -->
+
+  <!-- <distributionManagement>
     <repository>
         <id>github</id>
         <name>GitHub Aditya Packages</name>
         <url>https://maven.pkg.github.com/Aditya17051998/library</url>
     </repository>
-  </distributionManagement>
+  </distributionManagement> -->
 
 
   <dependencies>
