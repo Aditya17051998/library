@@ -5,9 +5,9 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.Aditya17051998</groupId>
+  <groupId>com.paysecure</groupId>
     <artifactId>library</artifactId>
-    <version>main</version>
+    <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>library</name>
@@ -17,7 +17,16 @@
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+        <id>github</id>
+        <name>GitHub Aditya Packages</name>
+        <url>https://maven.pkg.github.com/Aditya17051998/library</url>
+    </repository>
+  </distributionManagement>
+
 
   <dependencies>
     <!-- Lombok (optional) -->
