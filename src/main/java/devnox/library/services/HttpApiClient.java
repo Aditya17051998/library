@@ -182,7 +182,7 @@ public class HttpApiClient {
 
 
             MDC.put("category", "OUTGOING_API");
-            logger.apiLog("API_CALL", message);
+            logger.apiLog("OUTGOING_API_CALL", message);
             RequestLoggingContext.clear();
         }
 

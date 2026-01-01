@@ -1,9 +1,5 @@
 package devnox.library.logging;
 
-
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
@@ -12,7 +8,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 import org.springframework.web.util.ContentCachingResponseWrapper;
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -150,7 +145,7 @@ public class ApiLoggingFilter extends OncePerRequestFilter {
             MDC.put("response_headers", getHeadersMap(response).toString());
             MDC.put("category", "INCOMING_API");
 
-            logger.apiLog("API_CALL", "API REQUEST COMPLETED");
+            logger.apiLog("INCOMING_API_CALL", "Api log without Req/Res");
             RequestLoggingContext.clear();
         }
     }
@@ -225,7 +220,7 @@ public class ApiLoggingFilter extends OncePerRequestFilter {
                 MDC.put("response_headers", "FILTERED");
             }
 
-            logger.apiLog("API_CALL", "API request completed");
+            logger.apiLog("INCOMING_API_CALL", "Full Api Response with Req/Res body");
             RequestLoggingContext.clear();
 
             wrappedResponse.copyBodyToResponse(); // ✅ ensures original response body is sent
