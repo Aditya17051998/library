@@ -5,32 +5,49 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-
-  <!-- it for maven package -->
-
-  <groupId>com.paysecure</groupId>
-    <artifactId>library</artifactId>
-    <version>1.0.0</version>
-  <packaging>jar</packaging>
-
   <!-- This is mandatory if want to use spring-boot-starter-web -->
 
   <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.2.6</version>
-    <relativePath/> <!-- lookup parent from repository -->
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-dependencies</artifactId>
+      <version>3.2.6</version>
+      <relativePath/>
   </parent>
 
+  <!-- Updated groupId to your verified namespace -->
+  <groupId>io.github.aditya17051998</groupId>
+  <artifactId>common-lib</artifactId>
+  <version>1.1.8</version>
+  <packaging>jar</packaging>
 
+  <name>io.github.aditya17051998:common-lib</name>
+  <description>Reusable library for Paysecure apps</description>
+  <url>https://github.com/Aditya17051998/library</url>
 
-  <name>library</name>
-  <description>Reusable library module for Paysecure apps</description>
+  <licenses>
+      <license>
+          <name>Apache License 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      </license>
+  </licenses>
+
+  <developers>
+      <developer>
+          <id>pausecure</id>
+          <name>Devnox Development Team</name>
+          <email>kushwahaa862@gmail.com</email>
+      </developer>
+  </developers>
+
+  <scm>
+      <connection>scm:git:git://github.com/Aditya17051998/library.git</connection>
+      <developerConnection>scm:git:ssh://github.com/Aditya17051998/library.git</developerConnection>
+      <url>https://github.com/Aditya17051998/library</url>
+  </scm>
 
   <properties>
-        <java.version>21</java.version>
-        <maven.compiler.release>21</maven.compiler.release>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <java.version>21</java.version>
+      <spring.version>3.2.6</spring.version>
   </properties>
 
   <!-- When you want to create maven package on github -->
@@ -47,42 +64,175 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
-    <!-- <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency> -->
-
-    <!-- Lombok (optional) -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <!-- <version>1.18.32</version> -->
-      <scope>provided</scope>
+        <artifactId>spring-boot-starter-data-mongodb</artifactId>
     </dependency>
 
-    <!-- Spring Boot Core (optional) -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
-      <!-- <version>3.2.6</version> -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <optional>true</optional>
     </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jdbc</artifactId>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- ✅ Lombok for annotations like @Data, @ToString, @NoArgsConstructor -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- ✅ Jakarta Validation API (for @NotEmpty, @Pattern, etc.) -->
+    <dependency>
+        <groupId>jakarta.validation</groupId>
+        <artifactId>jakarta.validation-api</artifactId>
+        <!-- <version>3.0.2</version> -->
+    </dependency>
+
+    <dependency>
+        <groupId>jakarta.annotation</groupId>
+        <artifactId>jakarta.annotation-api</artifactId>
+    </dependency>
+
+    <!-- ✅ Hibernate Validator (implementation of Jakarta Validation API) -->
+    <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
+        <!-- For OncePerRequestFilter and caching wrappers -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- For HttpServletRequest/Response, FilterChain, etc. -->
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <!-- matches Java 21 / Spring Boot 3.x -->
+        <!-- <version>6.0.0</version>  -->
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- Only DB-related dependencies -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-core</artifactId>
+    </dependency>
+
+    <!-- Instead of spring-boot-starter-data-redis -->
+    <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-redis</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+    </dependency>
+
+
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+
+    <!-- Jackson core -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+    </dependency>
+
+    <!-- Jackson annotations -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+    </dependency>
+
+    <!-- Optional: Jackson core streaming -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>
-    <plugins>
-      <!-- Compiler -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
-        <configuration>
-          <release>21</release>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+        <plugins>
+            <!-- Java compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration><release>21</release></configuration>
+            </plugin>
+
+            <!-- Sources JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Javadoc JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.12.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- GPG signing -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.8</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals><goal>sign</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Central Publishing Maven Plugin (NEW) -->
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.9.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>paysecure</publishingServerId>
+                    <autoPublish>true</autoPublish>   <!-- Enable automatic publishing -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
