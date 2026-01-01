@@ -229,7 +229,7 @@
                 <version>0.9.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <publishingServerId>paysecure</publishingServerId>
+                    <publishingServerId>devnox</publishingServerId>
                     <autoPublish>true</autoPublish>   <!-- Enable automatic publishing -->
                 </configuration>
             </plugin>
