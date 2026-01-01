@@ -1,4 +1,4 @@
-package org.paysecure.library.httpResponse;
+package devnox.library.httpResponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,12 +8,12 @@ public class ResponseHandler {
 
     // 200 OK
     public static <T> ResponseEntity<ApiResponse<T>> success(T data, String message) {
-        return ResponseEntity.ok(new ApiResponse<>(true, message, data));
+        return ResponseEntity.ok(new ApiResponse<>(data, null, HttpStatus.OK));
     }
 
     // 201 Created
     public static <T> ResponseEntity<ApiResponse<T>> created(T data, String message) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>(true, message, data));
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<>(data, null, HttpStatus.CREATED));
     }
 
     // 204 No Content

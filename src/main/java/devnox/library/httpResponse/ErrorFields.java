@@ -1,4 +1,4 @@
-package org.paysecure.library.httpResponse;
+package devnox.library.httpResponse;
 
 import lombok.Data;
 

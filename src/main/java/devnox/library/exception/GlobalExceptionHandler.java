@@ -1,8 +1,8 @@
-package org.paysecure.library.exception;
+package devnox.library.exception;
 
-import org.paysecure.library.httpResponse.ApiError;
-import org.paysecure.library.httpResponse.ErrorFields;
-import org.paysecure.library.httpResponse.ResponseHandler;
+import devnox.library.httpResponse.ApiError;
+import devnox.library.httpResponse.ErrorFields;
+import devnox.library.httpResponse.ResponseHandler;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;

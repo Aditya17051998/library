@@ -1,4 +1,4 @@
-package org.paysecure.library.exception;
+package devnox.library.exception;
 
 import org.springframework.http.HttpStatus;
 
