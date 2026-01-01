@@ -10,7 +10,7 @@
 
   <groupId>com.paysecure</groupId>
     <artifactId>library</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <!-- This is mandatory if want to use spring-boot-starter-web -->

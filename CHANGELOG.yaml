@@ -1,0 +1,6 @@
+changelog:
+  - version: "1.0.0"
+    date: "2026-01-01"
+    added:
+      - type: "Initialize Library"
+      - description: "Initialize Library"
